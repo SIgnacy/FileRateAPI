@@ -7,13 +7,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8A987DD1-C19
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F34433F9-B550-4718-B4FF-BD8FCF6E60D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{3D88E20D-2CAD-4C9B-9E11-BFAAF4BBCE1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{3D88E20D-2CAD-4C9B-9E11-BFAAF4BBCE1D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{29F7697B-137F-470B-BEBF-C66C59FD5D11} = {29F7697B-137F-470B-BEBF-C66C59FD5D11}
+		{552CE443-47A7-4FD7-B89D-2AD51C5F3772} = {552CE443-47A7-4FD7-B89D-2AD51C5F3772}
+		{6D9FA4EE-DC38-4135-856D-305420F56DCD} = {6D9FA4EE-DC38-4135-856D-305420F56DCD}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{6D9FA4EE-DC38-4135-856D-305420F56DCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{6D9FA4EE-DC38-4135-856D-305420F56DCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{29F7697B-137F-470B-BEBF-C66C59FD5D11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{29F7697B-137F-470B-BEBF-C66C59FD5D11}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6D9FA4EE-DC38-4135-856D-305420F56DCD} = {6D9FA4EE-DC38-4135-856D-305420F56DCD}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{552CE443-47A7-4FD7-B89D-2AD51C5F3772}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{552CE443-47A7-4FD7-B89D-2AD51C5F3772}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E4D804BA-A745-4EF1-BA96-664F228B762C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
