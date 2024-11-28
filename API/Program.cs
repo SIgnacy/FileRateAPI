@@ -1,7 +1,6 @@
 using API.Extensions;
 using API.Middlewares.ExceptionHandlers;
 using Application;
-using Domain.Exceptions;
 using Domain.Repositories;
 using Infrastructure.Persistence.Extensions;
 using Infrastructure.Persistence.Repositories;
@@ -20,6 +19,7 @@ builder.Services.AddFileRateContext(
     builder.Configuration.GetConnectionString("SqlServer"));
 
 builder.Services.AddScoped<IMemberRepository, MemberRepository>();
+builder.Services.AddScoped<IKeywordRepository, KeywordRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddEndpoints(Assembly.GetExecutingAssembly());

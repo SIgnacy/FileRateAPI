@@ -5,7 +5,8 @@ namespace Domain.Repositories;
 
 public interface IKeywordRepository
 {
-    Task<PagedResult<Keyword?>> GetAsync(string? searchTerm, string? sortColumn, string? sortOrder, int page, int pageSize);
-    Task AddAsync(Keyword keyword);
-    Task RemoveAsync(Keyword keyword);
+    Task<PagedResult<Keyword>> GetAsync(string? searchTerm, string? sortColumn, string? sortOrder, int page, int pageSize, CancellationToken cancellationToken = default);
+    Task AddAsync(Keyword keyword, CancellationToken cancellationToken = default);
+    void Update(Keyword keyword);
+    void Remove(Keyword keyword);
 }
