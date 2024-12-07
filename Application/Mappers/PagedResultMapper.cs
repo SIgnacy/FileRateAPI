@@ -1,4 +1,4 @@
-﻿using Application.Keywords.Responses;
+﻿using Application.Keywords.Queries.Responses;
 using Application.Members.Queries.Responses;
 using Domain.Common;
 using Domain.Entities.Items;

@@ -5,7 +5,7 @@ using MediatR;
 
 namespace Application.Members.Commands.RemoveMemberCommand;
 
-public sealed class RemoveMemberCommandHandler : IRequestHandler<RemoveMemberCommand>
+internal sealed class RemoveMemberCommandHandler : IRequestHandler<RemoveMemberCommand>
 {
     private readonly IMemberRepository _memberRepository;
     private readonly IUnitOfWork _unitOfWork;

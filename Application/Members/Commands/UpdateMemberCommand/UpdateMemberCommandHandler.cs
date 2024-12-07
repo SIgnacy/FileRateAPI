@@ -5,7 +5,7 @@ using MediatR;
 
 namespace Application.Members.Commands.UpdateMemberCommand;
 
-public sealed class UpdateMemberCommandHandler : IRequestHandler<UpdateMemberCommand>
+internal sealed class UpdateMemberCommandHandler : IRequestHandler<UpdateMemberCommand>
 {
     private readonly IMemberRepository _memberRepository;
     private readonly IUnitOfWork _unitOfWork;

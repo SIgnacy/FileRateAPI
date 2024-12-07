@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Application.Members.Commands.AddMember;
 
-public sealed class AddMemberCommandHandler : IRequestHandler<AddMemberCommand>
+internal sealed class AddMemberCommandHandler : IRequestHandler<AddMemberCommand>
 {
     private readonly IMemberRepository _memberRepository;
     private readonly IUnitOfWork _unitOfWork;

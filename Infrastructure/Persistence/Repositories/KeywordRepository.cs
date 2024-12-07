@@ -16,9 +16,22 @@ public sealed class KeywordRepository : IKeywordRepository
     }
 
     public async Task AddAsync(
-        Keyword keyword, 
-        CancellationToken cancellationToken = default) 
-        => await _fileRateContext.Set<Keyword>().AddAsync(keyword, cancellationToken);
+        Keyword keyword,
+        CancellationToken cancellationToken = default) =>
+            await _fileRateContext.Set<Keyword>().AddAsync(keyword, cancellationToken);
+
+    public async Task AddMultipleAsync(
+        IEnumerable<Keyword> keywords, 
+        CancellationToken cancellationToken = default) =>
+            await _fileRateContext.Set<Keyword>().AddRangeAsync(keywords, cancellationToken);
+
+    public async Task<IEnumerable<bool>> CheckKeywordsAsync(IEnumerable<string> keywords, CancellationToken cancellationToken = default)
+    { 
+        var tasks = keywords.Select(async w => 
+            await _fileRateContext.Set<Keyword>().AnyAsync(k => k.Word == w)).ToList();
+
+        return await Task.WhenAll(tasks);
+    }
 
     public async Task<PagedResult<Keyword>> GetAsync(
         string? searchTerm, 

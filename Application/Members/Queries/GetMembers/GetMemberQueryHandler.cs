@@ -6,7 +6,7 @@ using MediatR;
 
 namespace Application.Members.Queries.GetMembers;
 
-public sealed class GetMemberQueryHandler : IRequestHandler<GetMemberQuery, PagedResult<MemberResponse>>
+internal sealed class GetMemberQueryHandler : IRequestHandler<GetMemberQuery, PagedResult<MemberResponse>>
 {
     private readonly IMemberRepository _memberRepository;
 

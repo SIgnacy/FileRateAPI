@@ -1,5 +1,4 @@
-﻿
-using Application.Keywords.Queries;
+﻿using Application.Keywords.Queries.GetKeywordsQuery;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

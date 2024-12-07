@@ -14,8 +14,8 @@ public sealed class Member
 
     public static Member Create(string username, string displayName)
     {
-        if(!string.IsNullOrWhiteSpace(username)) throw new ArgumentException("Username cannot be empty.");
-        if(!string.IsNullOrWhiteSpace(displayName)) throw new ArgumentException("DisplayName cannot be empty.");
+        if(string.IsNullOrWhiteSpace(username)) throw new ArgumentException("Username cannot be empty.");
+        if(string.IsNullOrWhiteSpace(displayName)) throw new ArgumentException("DisplayName cannot be empty.");
 
         return new Member
         {
@@ -27,8 +27,8 @@ public sealed class Member
 
     public void Update(string? newUsername, string? newDisplayName)
     {
-        if (Username != newUsername && !string.IsNullOrWhiteSpace(Username)) Username = newUsername;
-        if (DisplayName != newDisplayName && !string.IsNullOrWhiteSpace(newDisplayName)) DisplayName = newDisplayName;
+        if (!string.IsNullOrWhiteSpace(newUsername)) Username = newUsername;
+        if (!string.IsNullOrWhiteSpace(newDisplayName)) DisplayName = newDisplayName;
     }
 
     public override bool Equals(object? obj)

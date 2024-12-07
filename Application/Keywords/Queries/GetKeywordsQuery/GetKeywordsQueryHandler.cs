@@ -1,13 +1,12 @@
 ﻿using Application.Mappers;
-using Application.Keywords.Responses;
 using Domain.Common;
 using Domain.Repositories;
 using MediatR;
+using Application.Keywords.Queries.Responses;
 
-namespace Application.Keywords.Queries;
-public sealed record GetKeywordsQuery(string? SearchTerm, string? SortColumn, string? SortOrder, int Page, int PageSize) : IRequest<PagedResult<KeywordResponse>>;
+namespace Application.Keywords.Queries.GetKeywordsQuery;
 
-public sealed class GetKeywordsQueryHandler : IRequestHandler<GetKeywordsQuery, PagedResult<KeywordResponse>>
+internal sealed class GetKeywordsQueryHandler : IRequestHandler<GetKeywordsQuery, PagedResult<KeywordResponse>>
 {
     private readonly IKeywordRepository _keywordRepository;
 
@@ -19,7 +18,7 @@ public sealed class GetKeywordsQueryHandler : IRequestHandler<GetKeywordsQuery, 
     public async Task<PagedResult<KeywordResponse>> Handle(GetKeywordsQuery request, CancellationToken cancellationToken)
     {
         var response = await _keywordRepository.GetAsync(
-            request.SearchTerm, 
+            request.SearchTerm,
             request.SortColumn,
             request.SortOrder,
             request.Page,
