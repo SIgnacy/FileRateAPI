@@ -40,7 +40,7 @@ Designed to manage users and items, this project serves as excercise for educati
   }
   ```
 - __PATCH__ /api/members
-  ###### Example response
+  ###### Example body
   ```json
   {
   "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
