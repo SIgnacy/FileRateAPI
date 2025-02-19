@@ -17,6 +17,6 @@ public sealed class AddMember : IEndpoint
         {
             await sender.Send(command, cancellationToken);
             return Results.NoContent();
-        });
+        }).WithTags("Members");
     }
 }

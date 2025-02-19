@@ -17,6 +17,6 @@ public sealed class RemoveMember : IEndpoint
             RemoveMemberCommand command = new(id);
             await sender.Send(command, cancellationToken);
             return Results.NoContent();
-        });
+        }).WithTags("Members");
     }
 }

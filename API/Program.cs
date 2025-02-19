@@ -20,6 +20,7 @@ builder.Services.AddFileRateContext(
 
 builder.Services.AddScoped<IMemberRepository, MemberRepository>();
 builder.Services.AddScoped<IKeywordRepository, KeywordRepository>();
+builder.Services.AddScoped<IItemRepository, ItemRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddEndpoints(Assembly.GetExecutingAssembly());
@@ -39,6 +40,8 @@ var app = builder.Build();
 app.UseExceptionHandler();
 
 app.MapEndpoints();
+
+app.UseAntiforgery();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -16,6 +16,6 @@ public sealed class GetMemberById : IEndpoint
         {
             GetMemberByIdQuery query = new(id);
             return Results.Ok(await sender.Send(query, cancellationToken));
-        });
+        }).WithTags("Members"); ;
     }
 }

@@ -15,11 +15,11 @@ public sealed class GetKeywords : IEndpoint
             [FromQuery] string? search,
             [FromQuery] string? column,
             [FromQuery] string? order,
-            [FromQuery] int page,
+            [FromQuery] int page = 1,
             [FromQuery] int size = 10) =>
         {
             GetKeywordsQuery query = new(search, column, order, page, size);
             return Results.Ok(await sender.Send(query, cancellationToken));
-        });
+        }).WithTags("Keywords");
     }
 }

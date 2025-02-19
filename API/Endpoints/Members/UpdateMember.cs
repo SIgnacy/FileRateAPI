@@ -15,6 +15,6 @@ public sealed class UpdateMember : IEndpoint
             UpdateMemberCommand command) =>
         {
             await sender.Send(command, cancellationToken);
-        });
+        }).WithTags("Members");
     }
 }

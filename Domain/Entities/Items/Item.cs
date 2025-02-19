@@ -17,27 +17,25 @@ public sealed class Item
 
     public Item() { }
 
-    public Item(
-        ItemId id, 
+    public static Item Create(
         MemberId memberId, 
         Member member, 
+        byte[] file, 
         string name, 
         string description, 
-        byte[] file, 
-        HashSet<Keyword> keywords, 
-        ICollection<Rating> rating, 
-        DateTime createdAt, 
-        DateTime updatedAt)
+        HashSet<Keyword> keywords)
     {
-        Id = id;
-        MemberId = memberId;
-        Member = member;
-        Name = name;
-        Description = description;
-        File = file;
-        Keywords = keywords;
-        Rating = rating;
-        CreatedAt = createdAt;
-        UpdatedAt = updatedAt;
+        return new Item 
+        {
+            Id = new ItemId(Guid.NewGuid()),
+            MemberId = memberId,
+            Member = member,
+            File = file,
+            Name = name,
+            Description = description,
+            Keywords = keywords,
+            CreatedAt = DateTime.Now,
+            UpdatedAt = DateTime.Now
+        };
     }
 }

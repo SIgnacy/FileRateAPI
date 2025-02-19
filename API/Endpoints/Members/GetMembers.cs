@@ -14,11 +14,11 @@ public sealed class GetMembers : IEndpoint
             (ISender sender,
             CancellationToken cancellationToken,
             [FromQuery] string? search,
-            [FromQuery] int page,
+            [FromQuery] int page = 1,
             [FromQuery] int size = 10) =>
         {
             GetMemberQuery query = new(search, page, size);
             return Results.Ok(await sender.Send(query, cancellationToken));
-        });
+        }).WithTags("Members");
     }
 }
